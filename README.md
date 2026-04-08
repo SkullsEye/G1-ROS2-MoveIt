@@ -2,6 +2,10 @@
 
 **ROS2 MoveIt configuration** for the Unitree G1 humanoid robot. Includes URDF description, MoveIt motion planning setup, joint limit configuration, and helper scripts for collision and configuration management.
 
+<p align="center">
+  <img src="docs/images/g1pilot_flow.jpg" width="600" alt="G1 Control Architecture"/>
+</p>
+
 ## Features
 
 - Complete G1 URDF robot description with visual meshes
