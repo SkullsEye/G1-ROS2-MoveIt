@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="g1_29dof_with_hand_rev_1_0">
+    <group name="left_arm">
+        <chain base_link="torso_link" tip_link="left_hand_palm_link"/>
+    </group>
+    <group name="right_arm">
+        <chain base_link="torso_link" tip_link="right_hand_palm_link"/>
+    </group>
+
+    <group_state name="home" group="left_arm">
+        <joint name="left_shoulder_pitch_joint" value="0"/>
+        <joint name="left_shoulder_roll_joint" value="0"/>
+        <joint name="left_shoulder_yaw_joint" value="0"/>
+        <joint name="left_elbow_joint" value="0"/>
+        <joint name="left_wrist_roll_joint" value="0"/>
+        <joint name="left_wrist_pitch_joint" value="0"/>
+        <joint name="left_wrist_yaw_joint" value="0"/>
+    </group_state>
+    <group_state name="home" group="right_arm">
+        <joint name="right_shoulder_pitch_joint" value="0"/>
+        <joint name="right_shoulder_roll_joint" value="0"/>
+        <joint name="right_shoulder_yaw_joint" value="0"/>
+        <joint name="right_elbow_joint" value="0"/>
+        <joint name="right_wrist_roll_joint" value="0"/>
+        <joint name="right_wrist_pitch_joint" value="0"/>
+        <joint name="right_wrist_yaw_joint" value="0"/>
+    </group_state>
+
+    <virtual_joint name="virtual_joint" type="floating" parent_frame="world" child_link="base_link"/>
+
+    <disable_collisions link1="torso_link" link2="left_shoulder_pitch_link" reason="Adjacent"/>
+    <disable_collisions link1="torso_link" link2="right_shoulder_pitch_link" reason="Adjacent"/>
+    <disable_collisions link1="torso_link" link2="head_link" reason="Adjacent"/>
+    <disable_collisions link1="pelvis" link2="torso_link" reason="Adjacent"/>
+</robot>

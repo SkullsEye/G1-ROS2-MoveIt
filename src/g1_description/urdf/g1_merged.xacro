@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="g1_custom">
+
+  <xacro:include filename="g1.urdf" />
+
+  <xacro:include filename="g1_hand.urdf" />
+
+  <link name="world"/>
+  <joint name="fixed_base" type="fixed">
+    <parent link="world"/>
+    <child link="pelvis"/>
+    <origin xyz="0 0 0.75" rpy="0 0 0"/> </joint>
+
+  <joint name="right_wrist_to_new_hand" type="fixed">
+    <parent link="right_wrist_roll_link"/> 
+    
+    <child link="base_link_hand"/> 
+    
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>
